@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c4r080n88jt0n"]
+
+[sub_resource type="GDScript" id="GDScript_y3whq"]
+script/source = "extends Node
+
+
+func _init() -> void:
+	EventBus.queue.connect(_on_event)
+
+func _onEvent(event: Event) -> void:
+	var state: State = State.duplicate() as State
+
+	if events.has(event.type):
+		state = events[event.type].call(state, event)
+
+func _on_event(event: Event) -> void:
+	var state: State = State.duplicate() as State
+
+	if events.has(event.type):
+		state = events[event.type].call(state, event)
+
+func _reduce_go_to(state: State, event: GoToEvent) -> State:
+	print(\"reducer\", event)
+	return state
+"
+
+[node name="Reducer" type="Node" unique_id=711057023]
+script = SubResource("GDScript_y3whq")

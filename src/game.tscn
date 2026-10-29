@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://btp5x1p4xjpkp"]
+
+[ext_resource type="Script" uid="uid://cobr7snutbc1m" path="res://src/game.gd" id="1_3msxb"]
+[ext_resource type="PackedScene" uid="uid://bg5b0ye8lr0y8" path="res://src/view/controllers/scene.controller.tscn" id="2_kc8ui"]
+[ext_resource type="PackedScene" uid="uid://qfglqfco161" path="res://src/view/scenes/debug/debug.scene.tscn" id="2_xq6wo"]
+
+[node name="Game" type="Node2D" unique_id=842955005]
+script = ExtResource("1_3msxb")
+
+[node name="Controllers" type="Node" parent="." unique_id=697909312]
+
+[node name="SceneController" parent="Controllers" unique_id=481426788 node_paths=PackedStringArray("scenes") instance=ExtResource("2_kc8ui")]
+scenes = NodePath("../../CurrentScene")
+
+[node name="CurrentScene" type="Node2D" parent="." unique_id=384435376]
+
+[node name="DebugLayer" type="CanvasLayer" parent="." unique_id=231720315]
+
+[node name="DebugScene" parent="DebugLayer" unique_id=9065825 instance=ExtResource("2_xq6wo")]

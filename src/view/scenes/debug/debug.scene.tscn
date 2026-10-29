@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://qfglqfco161"]
+
+[ext_resource type="Script" uid="uid://ca4bp34nsyrmh" path="res://src/view/scenes/debug/debug.scene.gd" id="1_0f1pk"]
+
+[node name="DebugScene" type="Control" unique_id=9065825]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0f1pk")
+
+[node name="FpsLabel" type="Label" parent="." unique_id=2129322724]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+
+[node name="VersionLabel" type="Label" parent="." unique_id=2043796809]
+custom_maximum_size = Vector2(20, 12)
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 8
